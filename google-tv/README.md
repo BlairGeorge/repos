@@ -15,7 +15,24 @@ backup first so everything can be put back.
    ```
    (On a PC/Mac with `adb` installed the same commands work.)
 
-> iPhone: no Termux equivalent. Use a computer on the same Wi‑Fi instead.
+### iPhone users: use a computer on the same Wi‑Fi instead
+
+iOS can't run `adb`, so run the same commands from a computer:
+
+- **Mac:** install [Homebrew](https://brew.sh), then in Terminal:
+  ```sh
+  brew install android-platform-tools git
+  git clone https://github.com/BlairGeorge/repos.git && cd repos/google-tv
+  ```
+- **Windows:** install [Git for Windows](https://git-scm.com/download/win) (includes Git Bash) and
+  Google's [SDK Platform-Tools](https://developer.android.com/tools/releases/platform-tools);
+  unzip Platform-Tools and add that folder to your `PATH`. Then in **Git Bash**:
+  ```sh
+  git clone https://github.com/BlairGeorge/repos.git && cd repos/google-tv
+  ```
+- **Linux:** `sudo apt install adb git` (or your distro's equivalent), then clone as above.
+
+`./gtv.sh find` may find nothing on Windows; just use the IP:port shown on the TV.
 
 ## 2. Connect to the TV
 
