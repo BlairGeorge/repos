@@ -1,0 +1,49 @@
+# Known Google TV / Android TV packages and how risky they are to disable.
+# Format: risk|package|what it is|what stops working if disabled
+#
+# risk levels:
+#   low    - extras almost nobody needs; pre-selected in the plan
+#   app    - ordinary apps; only disable if you don't use them (not pre-selected)
+#   medium - removes a feature some people rely on (not pre-selected)
+#   keep   - core system; gtv.sh refuses to disable these
+#
+# Package identifications are best-effort; names can vary by device and firmware.
+# Only packages actually installed on your TV are shown in the plan.
+
+keep|com.google.android.apps.tv.launcherx|Google TV home screen|Home button, can leave TV unusable
+keep|com.google.android.tungsten.setupwraith|Setup wizard|Setup; can cause a boot loop
+keep|com.google.android.gms|Google Play services|Almost everything
+keep|com.google.android.gsf|Google Services Framework|Accounts, Play Store
+keep|com.android.vending|Google Play Store|App installs and updates
+keep|com.android.tv.settings|TV Settings|Settings app
+keep|com.android.systemui|System UI|System interface
+keep|com.android.providers.settings|Settings storage|System settings
+keep|com.android.shell|ADB shell|This tool
+keep|com.android.bluetooth|Bluetooth|Remote control, headphones
+keep|com.google.android.leanback.ime|Gboard for TV (on-screen keyboard)|Typing
+keep|com.google.android.permissioncontroller|Permission controller|App permissions
+keep|com.android.permissioncontroller|Permission controller|App permissions
+keep|com.google.android.tvrecommendations|Home screen content rows service|Home screen rows
+keep|com.google.android.tv.remote.service|Android TV Remote Service|Using your phone as a remote
+
+medium|com.google.android.katniss|Google app for TV (Assistant, voice search)|Voice search and Assistant
+medium|com.google.android.apps.mediashell|Chromecast built-in|Casting from your phone
+medium|com.google.android.videos|Google TV / Play Movies app|Purchased movies; possibly Library/Shop features
+medium|com.google.android.speech.pumpkin|Offline speech recognition|Offline voice commands
+medium|com.google.android.apps.tv.dreamx|Ambient mode screensaver|Photo/ambient screensaver (falls back to basic)
+medium|com.google.android.backdrop|Backdrop ambient mode (older devices)|Ambient screensaver
+
+app|com.google.android.youtube.tv|YouTube|YouTube
+app|com.google.android.youtube.tvmusic|YouTube Music|YouTube Music
+app|com.google.android.youtube.tvkids|YouTube Kids|YouTube Kids
+app|com.netflix.ninja|Netflix|Netflix
+app|com.amazon.amazonvideo.livingroom|Prime Video|Prime Video
+app|com.disney.disneyplus|Disney+|Disney+
+app|com.spotify.tv.android|Spotify|Spotify
+
+low|com.google.android.play.games|Google Play Games|Game sign-in and achievements
+low|com.google.android.feedback|Send feedback|Sending feedback to Google
+low|com.google.android.tv.bugreportsender|Bug report sender|Sending bug reports
+low|com.android.printspooler|Print spooler|Printing (TVs don't print)
+low|com.android.dreams.basic|Basic "colors" screensaver|That screensaver
+low|com.google.android.marvin.talkback|TalkBack screen reader|Spoken accessibility feedback (keep if you use it)
